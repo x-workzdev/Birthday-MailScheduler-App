@@ -1,26 +1,15 @@
 package com.xworkz.birthdayMailSchedular.util;
 
 import java.io.InputStream;
-import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-
-import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.Row.MissingCellPolicy;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import org.threeten.bp.DateTimeUtils;
-import org.threeten.bp.Instant;
-import com.xworkz.dto.EnquiryDTO;
 
 @Component
 public class ExcelHelper {
@@ -31,6 +20,7 @@ public class ExcelHelper {
 		logger.info("{} is created", this.getClass().getSimpleName());
 	}
 
+	@SuppressWarnings("deprecation")
 	public List<String> getContactListFromInputStream(InputStream inputStream) {
 		List<String> mobileNumList = new ArrayList<String>();
 		try {
